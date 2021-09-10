@@ -7,21 +7,46 @@ body {
   padding: 0;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+button {
+  text-transform: none;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
   display: flex;
 }
 
 .notesList {
   width: 30%;
+  height: 92.5vh;
   padding: 20px;
 
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #eceff1;
+  border-right: 1px solid #eceff1;
+  box-sizing: border-box;
+}
+
+.notesList button {
+  margin-bottom: 20px;
 }
 
 .noteDetails {
+  height: 92.5vh;
+  /* width: 100%; */
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -32,15 +57,92 @@ body {
 }
 
 .noteDetails .header {
-
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .noteDetails input {
   width: 100%;
+  font-size: inherit;
+  line-height: 25px;
+  padding: 5px 15px 5px 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 50px;
+  background-color: #eceff1;
 }
 
 .noteDetails textarea {
   width: 100%;
-  height: 300px;
+  height: 500px;
+  font-size: inherit;
+  line-height: 25px;
+  padding: 10px 15px 10px 15px;
+  margin-top: 10px;
   margin-bottom: 20px;
+  box-sizing: border-box;
+  resize: none;
+  border: none;
+  border-radius: 20px;
+  background-color: #eceff1;
+  font-family: 'Roboto';
+}
+
+.noNoteDetails {
+  /* width: 100%; */
+  height: 92.5vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+  padding: 20px;
+  color:gray;
+}
+
+.selectedNote {
+  color:#3f51b5 !important;
+}
+
+.appBar {
+  height: 7.5vh;
+  display: flex;
+  align-items: center;
+  /* padding: 0 20px 0 20px; */
+  border-bottom: 1px solid #eceff1;
+}
+
+.appBar .left {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.appBar .right {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  background-color: #eceff1;
+}
+
+.appBar .right .search {
+  width: 500px;
+  margin: 0;
+  font-size: inherit;
+  line-height: 25px;
+  padding: 5px 15px 5px 15px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 50px;
+  background-color: #eceff1;
 }
